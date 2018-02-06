@@ -6,7 +6,6 @@ pages:
 - Getting Started: 'getting-started.md'
 - Packer:
   - 'What is Packer': 'packer/introduction.md'
-  - 'Packer repository': 'packer/packer-repo.md'
   - 'Building the image': 'packer/building-the-image.md'
 - Scenarios:
   - 'What are scenarios': 'scenarios/introduction.md'
@@ -18,3 +17,6 @@ pages:
   - 'Files Folder': 'scenarios/files.md'
 - Vagrant:
   - 'What is Vagrant': 'vagrant/introduction.md'
+  - 'Getting Started': 'vagrant/getting-started.md'
+  - 'Launch Scenario': 'vagrant/launch-scenario.md'
+- FAQ: 'faq.md'
