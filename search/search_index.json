@@ -2,23 +2,43 @@
     "docs": [
         {
             "location": "/", 
-            "text": "Welcome to MkDocs\n\n\nFor full documentation visit \nmkdocs.org\n.\n\n\nCommands\n\n\n\n\nmkdocs new [dir-name]\n - Create a new project.\n\n\nmkdocs serve\n - Start the live-reloading docs server.\n\n\nmkdocs build\n - Build the documentation site.\n\n\nmkdocs help\n - Print this help message.\n\n\n\n\nProject layout\n\n\nmkdocs.yml    # The configuration file.\ndocs/\n    index.md  # The documentation homepage.\n    ...       # Other markdown pages, images and other files.", 
-            "title": "Welcome to MkDocs"
+            "text": "Qlik Machine Images (QMI)\n\n\nQMI is a tool for building environments in an automated reproducible way.  Using simple workflows environments are able to be started consistently and reliably, removing the time to build and keep environments up to date allowing the focus to be on the product, not the installation and configuration.", 
+            "title": "Qlik Machine Images (QMI)"
         }, 
         {
-            "location": "/#welcome-to-mkdocs", 
-            "text": "For full documentation visit  mkdocs.org .", 
-            "title": "Welcome to MkDocs"
+            "location": "/#qlik-machine-images-qmi", 
+            "text": "QMI is a tool for building environments in an automated reproducible way.  Using simple workflows environments are able to be started consistently and reliably, removing the time to build and keep environments up to date allowing the focus to be on the product, not the installation and configuration.", 
+            "title": "Qlik Machine Images (QMI)"
         }, 
         {
-            "location": "/#commands", 
-            "text": "mkdocs new [dir-name]  - Create a new project.  mkdocs serve  - Start the live-reloading docs server.  mkdocs build  - Build the documentation site.  mkdocs help  - Print this help message.", 
-            "title": "Commands"
+            "location": "/getting started/", 
+            "text": "Getting Started\n\n\nThe QMI getting started guide will walk you through the installation and configuration of the components that QMI utilises.\n\n\nQMI is built on the shoulders of industry leading and industry standard technologies and has been tested with Microsoft Windows, Apple OSX and various flavours of Linux (Ubuntu, CentOS).\n\n\n\n\nPacker\n\n\nVagrant\n\n\nVirtualBox\n\n\n\n\nGetting the pre-requisites\n\n\nDownloads\n\n\n\n\nHashicorp Packer\n\n\nHashicorp Vagrant\n\n\nOracle VirtualBox\n\n\n\n\nNote: As these technologies are Open Source there can at times be incompatibilities between versions.  Be sure to review the documentation on these applications before upgrading.\n\n\nInstallation\n\n\nInstall the applications as per the documentation for each application.\n\n\nClone or download the Git repositories", 
+            "title": "Getting Started"
         }, 
         {
-            "location": "/#project-layout", 
-            "text": "mkdocs.yml    # The configuration file.\ndocs/\n    index.md  # The documentation homepage.\n    ...       # Other markdown pages, images and other files.", 
-            "title": "Project layout"
+            "location": "/getting started/#getting-started", 
+            "text": "The QMI getting started guide will walk you through the installation and configuration of the components that QMI utilises.  QMI is built on the shoulders of industry leading and industry standard technologies and has been tested with Microsoft Windows, Apple OSX and various flavours of Linux (Ubuntu, CentOS).   Packer  Vagrant  VirtualBox", 
+            "title": "Getting Started"
+        }, 
+        {
+            "location": "/getting started/#getting-the-pre-requisites", 
+            "text": "", 
+            "title": "Getting the pre-requisites"
+        }, 
+        {
+            "location": "/getting started/#downloads", 
+            "text": "Hashicorp Packer  Hashicorp Vagrant  Oracle VirtualBox   Note: As these technologies are Open Source there can at times be incompatibilities between versions.  Be sure to review the documentation on these applications before upgrading.", 
+            "title": "Downloads"
+        }, 
+        {
+            "location": "/getting started/#installation", 
+            "text": "Install the applications as per the documentation for each application.", 
+            "title": "Installation"
+        }, 
+        {
+            "location": "/getting started/#clone-or-download-the-git-repositories", 
+            "text": "", 
+            "title": "Clone or download the Git repositories"
         }
     ]
 }
