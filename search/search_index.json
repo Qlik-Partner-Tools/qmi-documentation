@@ -66,16 +66,6 @@
             "title": "qlik-base-os repository"
         }, 
         {
-            "location": "/packer/packer-repo/", 
-            "text": "qlik-base-os repository\n\n\nThe qlik-base-os repository contains the files necessary to create a blank Microsoft Windows 2016 Standard Oracle VirtualBox virtual machine.  \n\n\n\n\n\n\n\n\nFolder\n\n\nFile\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nanswer_files\n\n\nAutounattend.xml\n\n\nWindows unattended install template\n\n\n\n\n\n\nfloppy\n\n\nNA\n\n\nNot currently used\n\n\n\n\n\n\niso\n\n\nNA\n\n\nPlace the Windows 2016 iso download here\n\n\n\n\n\n\nscripts\n\n\nAll\n\n\nScripts that are executed during the creation of the virtual machine image\n\n\n\n\n\n\nroot\n\n\nvagrantfile-windows_2016.template\n\n\nVagrant file used to create the Vagrant box file\n\n\n\n\n\n\nroot\n\n\nWin2k16.json\n\n\nPacker configuration file", 
-            "title": "Packer repository"
-        }, 
-        {
-            "location": "/packer/packer-repo/#qlik-base-os-repository", 
-            "text": "The qlik-base-os repository contains the files necessary to create a blank Microsoft Windows 2016 Standard Oracle VirtualBox virtual machine.       Folder  File  Description      answer_files  Autounattend.xml  Windows unattended install template    floppy  NA  Not currently used    iso  NA  Place the Windows 2016 iso download here    scripts  All  Scripts that are executed during the creation of the virtual machine image    root  vagrantfile-windows_2016.template  Vagrant file used to create the Vagrant box file    root  Win2k16.json  Packer configuration file", 
-            "title": "qlik-base-os repository"
-        }, 
-        {
             "location": "/packer/building-the-image/", 
             "text": "Building the base machine image\n\n\nUpdating the Windows 2016 License information\n\n\n\n\nLaunch your text editor and open the qlik-base-os repository folder.\n\n\n\nOpen the Autounattend.xml file located in /answer_files/2016\n\n\nIt is recommended that you enter a valid Windows 2016 Server Standard edition license key (however it is possible to use an Evaluation version of Windows.  If an evaluation version is to be used skip this step. \n\n\nSearch for \nProductKey\n\n\n\n\nUncomment the key field and change the X's to be your license key\n\n\nSave the file\n\n\n\n\nGet the MD5 checksum value from the Windows 2016 ISO file\n\n\nYou will need to download a tool for this, use something like MD5SUM or if using Windows the \nMD5 Checksum Tool\n\n\n\n\nLaunch your terminal\n\n\nUse whatever MD5 checksum tool you have chosen to get the checksum\n\n\n\nCopy the checksum value into your clipboard\n\n\n\n\nUpdate the checksum value and the name of your Windows iso file\n\n\n\n\nFrom your text editor open the file /qlik-base-os/win2k16.json\n\n\nScroll to the bottom and find the variables section\n\n\n\nUpdate the iso file name in \niso_url\n\n\nUpdate the iso checksum in \niso_checksum\n\n\nSave the file\n\n\n\n\nStart the build\n\n\n\n\nLaunch your terminal\n\n\nBrowse to /qlik-base-os \n\n\nEnter \npacker build win2k16.json\n\n\nWait\n\n\nTo view the process open VirtualBox and launch the VM, you will see it progress through the various steps\n\n\nA file will be output at the end which is the Box file to be used in Vagrant", 
             "title": "Building the image"
