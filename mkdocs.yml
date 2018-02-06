@@ -1,1 +1,20 @@
-site_name: My Docs
+site_name: Qlik Machine Images
+theme:
+  name: 'material'
+pages:
+- Home: 'index.md'
+- Getting Started: 'getting-started.md'
+- Packer:
+  - 'What is Packer': 'packer/introduction.md'
+  - 'Packer repository': 'packer/packer-repo.md'
+  - 'Building the image': 'packer/building-the-image.md'
+- Scenarios:
+  - 'What are scenarios': 'scenarios/introduction.md'
+  - 'Anatomy of a scenario': 'scenarios/anatomy-of-a-scenario.md'
+  - 'Scenario.json': 'scenarios/scenario-json.md'
+  - 'Vagrantfile': 'scenarios/vagrantfile.md'
+  - 'Readme.md': 'scenarios/readme-md.md'
+  - 'Provisioner Scripts': 'scenarios/scripts.md'
+  - 'Files Folder': 'scenarios/files.md'
+- Vagrant:
+  - 'What is Vagrant': 'vagrant/introduction.md'

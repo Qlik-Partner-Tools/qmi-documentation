@@ -1,17 +1,5 @@
-# Welcome to MkDocs
+# Qlik Machine Images (QMI)
 
-For full documentation visit [mkdocs.org](http://mkdocs.org).
+QMI is a tool for building environments in an automated reproducible way.  Using simple workflows environments are able to be started consistently and reliably, removing the time to build and keep environments up to date allowing the focus to be on the product, not the installation and configuration.
 
-## Commands
-
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs help` - Print this help message.
-
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+Please see the [Getting Started](getting-started.md) page for further details.
