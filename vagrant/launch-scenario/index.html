@@ -36,7 +36,7 @@
     
     
       
-        <title>What is Vagrant - Qlik Machine Images</title>
+        <title>Launch Scenario - Qlik Machine Images</title>
       
     
     
@@ -69,7 +69,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
     <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
     
-      <a href="#what-is-vagrant" tabindex="1" class="md-skip">
+      <a href="#launching-a-scenario" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -95,7 +95,7 @@
                 Qlik Machine Images
               </span>
               <span class="md-header-nav__topic">
-                What is Vagrant
+                Launch Scenario
               </span>
             
           
@@ -365,47 +365,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="toc">
-        What is Vagrant
-      </label>
-    
-    <a href="./" title="What is Vagrant" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../introduction/" title="What is Vagrant" class="md-nav__link">
       What is Vagrant
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#what-you-will-need" title="What you will need" class="md-nav__link">
-    What you will need
-  </a>
-  
-</li>
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -425,11 +389,20 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../launch-scenario/" title="Launch Scenario" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+    <a href="./" title="Launch Scenario" class="md-nav__link md-nav__link--active">
       Launch Scenario
     </a>
+    
   </li>
 
         
@@ -467,20 +440,6 @@
     
   
   
-    <label class="md-nav__title" for="toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#what-you-will-need" title="What you will need" class="md-nav__link">
-    What you will need
-  </a>
-  
-</li>
-      
-      
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -492,15 +451,16 @@
               
                 
                 
-                <h1 id="what-is-vagrant">What is Vagrant</h1>
-<p>Vagrant is a tool for building and managing virtual machine environments in a single workflow. With an easy-to-use workflow and focus on automation, Vagrant lowers development environment setup time, increases production parity, and makes the "works on my machine" excuse a relic of the past.</p>
-<h2 id="what-you-will-need">What you will need</h2>
-<ul>
-<li>Vagrant 2.0.1 or Vagrant 2.0.2 </li>
-<li>A built Vagrant Box <a href="../../packer/building-the-image/">Building the image</a></li>
-<li>A decent text editor</li>
-<li>Some knowledge about Packer, JSON and PowerShell</li>
-</ul>
+                <h1 id="launching-a-scenario">Launching a scenario</h1>
+<ol>
+<li>Open your terminal or PowerShell if using Microsoft Windows</li>
+<li>Browse to the scenario you want to start (eg. /qmi-scenarios/qmi-qs-sn)</li>
+<li>Enter <strong>vagrant up</strong>
+<img alt="vagrant-up" src="../../img/vagrant-up.png" /></li>
+<li>Watch the progress (depending on machine this process should take approximately 10 minutes)</li>
+<li>Check for any error's or warnings during the provisioning process
+<img alt="vagrant-up-2" src="../../img/vagrant-up-2.png" /></li>
+</ol>
                 
                   
                 
@@ -519,7 +479,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../../scenarios/files/" title="Files Folder" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../getting-started/" title="Getting Started" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -528,19 +488,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Files Folder
+                Getting Started
               </span>
             </div>
           </a>
         
         
-          <a href="../getting-started/" title="Getting Started" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../faq/" title="FAQ" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Getting Started
+                FAQ
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

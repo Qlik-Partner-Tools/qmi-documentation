@@ -87,6 +87,26 @@
      <changefreq>daily</changefreq>
     </url>
         
+    <url>
+     <loc>/vagrant/getting-started/</loc>
+     <lastmod>2018-02-06</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/vagrant/launch-scenario/</loc>
+     <lastmod>2018-02-06</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+    <url>
+     <loc>/faq/</loc>
+     <lastmod>2018-02-06</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
     
 
 </urlset>

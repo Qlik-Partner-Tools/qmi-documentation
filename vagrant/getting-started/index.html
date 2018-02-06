@@ -36,7 +36,7 @@
     
     
       
-        <title>What is Vagrant - Qlik Machine Images</title>
+        <title>Getting Started - Qlik Machine Images</title>
       
     
     
@@ -69,7 +69,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
     <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
     
-      <a href="#what-is-vagrant" tabindex="1" class="md-skip">
+      <a href="#getting-started" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -95,7 +95,7 @@
                 Qlik Machine Images
               </span>
               <span class="md-header-nav__topic">
-                What is Vagrant
+                Getting Started
               </span>
             
           
@@ -365,6 +365,18 @@
           
           
 
+
+  <li class="md-nav__item">
+    <a href="../introduction/" title="What is Vagrant" class="md-nav__link">
+      What is Vagrant
+    </a>
+  </li>
+
+        
+          
+          
+          
+
   
 
 
@@ -376,11 +388,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="toc">
-        What is Vagrant
+        Getting Started
       </label>
     
-    <a href="./" title="What is Vagrant" class="md-nav__link md-nav__link--active">
-      What is Vagrant
+    <a href="./" title="Getting Started" class="md-nav__link md-nav__link--active">
+      Getting Started
     </a>
     
       
@@ -394,8 +406,29 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#what-you-will-need" title="What you will need" class="md-nav__link">
-    What you will need
+  <a href="#add-the-vagrant-box-to-vagrant" title="Add the Vagrant box to Vagrant" class="md-nav__link">
+    Add the Vagrant box to Vagrant
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#update-the-qlik-licenses" title="Update the Qlik Licenses" class="md-nav__link">
+    Update the Qlik Licenses
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qlik-version" title="Qlik Version" class="md-nav__link">
+    Qlik Version
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qlik-version-updates" title="Qlik Version Updates" class="md-nav__link">
+    Qlik Version Updates
   </a>
   
 </li>
@@ -406,18 +439,6 @@
   
 </nav>
     
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../getting-started/" title="Getting Started" class="md-nav__link">
-      Getting Started
-    </a>
   </li>
 
         
@@ -471,8 +492,29 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#what-you-will-need" title="What you will need" class="md-nav__link">
-    What you will need
+  <a href="#add-the-vagrant-box-to-vagrant" title="Add the Vagrant box to Vagrant" class="md-nav__link">
+    Add the Vagrant box to Vagrant
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#update-the-qlik-licenses" title="Update the Qlik Licenses" class="md-nav__link">
+    Update the Qlik Licenses
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qlik-version" title="Qlik Version" class="md-nav__link">
+    Qlik Version
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qlik-version-updates" title="Qlik Version Updates" class="md-nav__link">
+    Qlik Version Updates
   </a>
   
 </li>
@@ -492,15 +534,142 @@
               
                 
                 
-                <h1 id="what-is-vagrant">What is Vagrant</h1>
-<p>Vagrant is a tool for building and managing virtual machine environments in a single workflow. With an easy-to-use workflow and focus on automation, Vagrant lowers development environment setup time, increases production parity, and makes the "works on my machine" excuse a relic of the past.</p>
-<h2 id="what-you-will-need">What you will need</h2>
-<ul>
-<li>Vagrant 2.0.1 or Vagrant 2.0.2 </li>
-<li>A built Vagrant Box <a href="../../packer/building-the-image/">Building the image</a></li>
-<li>A decent text editor</li>
-<li>Some knowledge about Packer, JSON and PowerShell</li>
-</ul>
+                <h1 id="getting-started">Getting Started</h1>
+<h2 id="add-the-vagrant-box-to-vagrant">Add the Vagrant box to Vagrant</h2>
+<ol>
+<li>Launch your terminal or PowerShell if using Microsoft Windows</li>
+<li>Browse to /qlik-base-os/</li>
+<li>Find the file <strong>Win2k16-virtualbox.box</strong> this is the output of building the base image from Packer</li>
+<li>Enter <strong>vagrant box add --name qlik/win2k16 win2k16-virtualbox.box</strong></li>
+<li>Enter <strong>vagrant box list</strong> and ensure the <strong>qlik/win2k16</strong> box is present
+<img alt="vagrant-box-list" src="../../img/vagrant-box-list.png" /></li>
+<li>This matches the value in the scenario.json file in the scenario folder
+<img alt="vagrant-scenario" src="../../img/scenarios-json.png" /></li>
+</ol>
+<h2 id="update-the-qlik-licenses">Update the Qlik Licenses</h2>
+<ol>
+<li>Launch your text editor</li>
+<li>Open the folder /qmi-scenarios/</li>
+<li>Open the file /shared-content/licenses/qlik-license.json
+<img alt="vagrant-license-folder" src="../../img/vagrant-license-folder.png" /></li>
+<li>Add the Qlik Licenses (at this stage only sense and qlikview are functional)</li>
+</ol>
+<pre><code>{
+  &quot;sense&quot;: {
+    &quot;name&quot;: &quot;ENTER_NAME_HERE&quot;,
+    &quot;control&quot;: &quot;ENTER_CONTROL_CODE_HERE&quot;,
+    &quot;serial&quot;: &quot;ENTER_SERIAL_CODE_HERE&quot;,
+    &quot;organization&quot;: &quot;ENTER_YOUR_ORG_NAME_HERE&quot;,
+    &quot;lef&quot;: &quot;QLIKSENSE_LEF_STRING_GOES_HERE&quot;
+  },
+  &quot;qap&quot;: {
+    &quot;name&quot;: &quot;ENTER_NAME_HERE&quot;,
+    &quot;control&quot;: &quot;ENTER_CONTROL_CODE_HERE&quot;,
+    &quot;serial&quot;: &quot;ENTER_SERIAL_CODE_HERE&quot;,
+    &quot;organization&quot;: &quot;ENTER_YOUR_ORG_NAME_HERE&quot;
+  },
+  &quot;qlikview&quot;: {
+    &quot;name&quot;: &quot;ENTER_NAME_HERE&quot;,
+    &quot;control&quot;: &quot;ENTER_CONTROL_CODE_HERE&quot;,
+    &quot;serial&quot;: &quot;ENTER_SERIAL_CODE_HERE&quot;,
+    &quot;organization&quot;: &quot;ENTER_YOUR_ORG_NAME_HERE&quot;
+  },
+  &quot;datamarket&quot;: {
+    &quot;name&quot;: &quot;ENTER_NAME_HERE&quot;,
+    &quot;control&quot; : &quot;ENTER_CONTROL_CODE_HERE&quot;,
+    &quot;serial&quot;: &quot;ENTER_SERIAL_CODE_HERE&quot;,
+    &quot;termsAcceptance&quot;: {},
+    &quot;organization&quot;: &quot;ENTER_YOUR_ORG_NAME_HERE&quot;,
+    &quot;lef&quot;: &quot;DATAMARKET_LEF_STRING_GOES_HERE&quot;
+  }
+}
+</code></pre>
+
+<h2 id="qlik-version">Qlik Version</h2>
+<p>The version of Qlik that is installed with the scenario is determined by the default-qlik-binary field in <strong>scenario.json</strong>.  This value updates the /shared-content/binaries/qver.json file.</p>
+<h2 id="qlik-version-updates">Qlik Version Updates</h2>
+<p>The available versions to install are stored within /shared-content/binaries/qBinaryDownload.json.  This file needs to have the version and URL in order to download the entered version of Qlik Sense.</p>
+<pre><code>{
+    &quot;qliksense&quot;: [
+        {
+            &quot;name&quot;: &quot;Qlik Sense November 2017 Patch 1&quot;,
+            &quot;url&quot;: &quot;https://da3hntz84uekx.cloudfront.net/QlikSense/11.24/1/_MSI/Qlik_Sense_update.exe&quot;,
+            &quot;url2&quot;: &quot;https://da3hntz84uekx.cloudfront.net/QlikSense/11.24/0/_MSI/Qlik_Sense_setup.exe&quot;
+        },
+        {
+            &quot;name&quot;: &quot;Qlik Sense November 2017&quot;,
+            &quot;url&quot;: &quot;https://da3hntz84uekx.cloudfront.net/QlikSense/11.24/0/_MSI/Qlik_Sense_setup.exe&quot;
+        },
+        {
+            &quot;name&quot;: &quot;Qlik Sense September 2017 Patch 1&quot;,
+            &quot;url&quot;: &quot;https://da3hntz84uekx.cloudfront.net/QlikSense/11.14/1/_MSI/Qlik_Sense_update.exe&quot;,
+            &quot;url2&quot;: &quot;https://da3hntz84uekx.cloudfront.net/QlikSense/11.14/0/_MSI/Qlik_Sense_setup.exe&quot;
+        },
+        {
+            &quot;name&quot;: &quot;Qlik Sense September 2017&quot;,
+            &quot;url&quot;: &quot;https://da3hntz84uekx.cloudfront.net/QlikSense/11.14/0/_MSI/Qlik_Sense_setup.exe&quot;
+        },
+        {
+            &quot;name&quot;: &quot;Qlik Sense June 2017 Patch 3&quot;,
+            &quot;url&quot;: &quot;https://da3hntz84uekx.cloudfront.net/QlikSense/11.11/3/_MSI/Qlik_Sense_update.exe&quot;,
+            &quot;url2&quot;: &quot;https://da3hntz84uekx.cloudfront.net/QlikSense/11.11/0/_MSI/Qlik_Sense_setup.exe&quot;
+        },
+        {
+            &quot;name&quot;: &quot;Qlik Sense June 2017 Patch 2&quot;,
+            &quot;url&quot;: &quot;https://da3hntz84uekx.cloudfront.net/QlikSense/11.11/2/_MSI/Qlik_Sense_update.exe&quot;,
+            &quot;url2&quot;: &quot;https://da3hntz84uekx.cloudfront.net/QlikSense/11.11/0/_MSI/Qlik_Sense_setup.exe&quot;
+        },
+        {
+            &quot;name&quot;: &quot;Qlik Sense June 2017 Patch 1&quot;,
+            &quot;url&quot;: &quot;https://da3hntz84uekx.cloudfront.net/QlikSense/11.11/1/_MSI/Qlik_Sense_update.exe&quot;,
+            &quot;url2&quot;: &quot;https://da3hntz84uekx.cloudfront.net/QlikSense/11.11/0/_MSI/Qlik_Sense_setup.exe&quot;
+        },
+        {
+            &quot;name&quot;: &quot;Qlik Sense June 2017&quot;,
+            &quot;url&quot;: &quot;https://da3hntz84uekx.cloudfront.net/QlikSense/11.11/0/_MSI/Qlik_Sense_setup.exe&quot;
+        },
+        {
+            &quot;name&quot;: &quot;Qlik Sense 3.2 SR5&quot;,
+            &quot;url&quot;: &quot;https://da3hntz84uekx.cloudfront.net/QlikSense/3.2.5/205/_MSI/Qlik_Sense_setup.exe&quot;
+        },
+        {
+            &quot;name&quot;: &quot;Qlik Sense 3.2 SR4&quot;,
+            &quot;url&quot;: &quot;https://da3hntz84uekx.cloudfront.net/QlikSense/3.2.4/204/_MSI/Qlik_Sense_setup.exe&quot;
+        },
+        {
+            &quot;name&quot;: &quot;Qlik Sense 3.2 SR3&quot;,
+            &quot;url&quot;: &quot;https://da3hntz84uekx.cloudfront.net/QlikSense/3.2.3/203/_MSI/Qlik_Sense_setup.exe&quot;
+        },
+        {
+            &quot;name&quot;: &quot;Qlik Sense 3.2 SR2&quot;,
+            &quot;url&quot;: &quot;https://da3hntz84uekx.cloudfront.net/QlikSense/3.2.2/202/_MSI/Qlik_Sense_setup.exe&quot;
+        },
+        {
+            &quot;name&quot;: &quot;Qlik Sense February 2018 pre-release&quot;,
+            &quot;preview&quot;: true,
+            &quot;url&quot;: &quot;https://qmi.qlik.com/downloads/installers/Qlik_Sense_setup.exe&quot;
+        }
+    ],
+    &quot;qlikview&quot;: [
+        {
+            &quot;name&quot;: &quot;QlikView Server November 2017&quot;,
+            &quot;url&quot;: &quot;https://da3hntz84uekx.cloudfront.net/qlikview/12.20/122020100/_MSI/QlikViewServer_x64Setup.exe&quot;
+        },
+        {
+            &quot;name&quot;: &quot;QlikView Server 12.10 SR8&quot;,
+            &quot;url&quot;: &quot;https://da3hntz84uekx.cloudfront.net/qlikview/12.10/121020600/_MSI/QlikViewServer_x64Setup.exe&quot;
+        },
+        {
+            &quot;name&quot;: &quot;QlikView Server 12.10 SR7&quot;,
+            &quot;url&quot;: &quot;https://da3hntz84uekx.cloudfront.net/qlikview/12.10/121020500/_MSI/QlikViewServer_x64Setup.exe&quot;
+        },
+        {
+            &quot;name&quot;: &quot;QlikView Server 11.20 SR17&quot;,
+            &quot;url&quot;: &quot;https://da3hntz84uekx.cloudfront.net/qlikview/11.20/13607/_MSI/QlikViewServer_Win2012andUp.exe&quot;
+        }
+    ]
+}
+</code></pre>
                 
                   
                 
@@ -519,7 +688,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../../scenarios/files/" title="Files Folder" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../introduction/" title="What is Vagrant" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -528,19 +697,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Files Folder
+                What is Vagrant
               </span>
             </div>
           </a>
         
         
-          <a href="../getting-started/" title="Getting Started" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../launch-scenario/" title="Launch Scenario" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Getting Started
+                Launch Scenario
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

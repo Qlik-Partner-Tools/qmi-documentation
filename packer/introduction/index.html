@@ -251,6 +251,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#packer-worklow" title="Packer Worklow" class="md-nav__link">
+    Packer Worklow
+  </a>
+  
+</li>
+      
       
       
     </ul>
@@ -416,8 +423,44 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../vagrant/getting-started/" title="Getting Started" class="md-nav__link">
+      Getting Started
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../vagrant/launch-scenario/" title="Launch Scenario" class="md-nav__link">
+      Launch Scenario
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../faq/" title="FAQ" class="md-nav__link">
+      FAQ
+    </a>
   </li>
 
     
@@ -455,6 +498,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#packer-worklow" title="Packer Worklow" class="md-nav__link">
+    Packer Worklow
+  </a>
+  
+</li>
+      
       
       
     </ul>
@@ -475,7 +525,6 @@
 <p>QMI uses Hashicorp Vagrant to use the machine image created by Packer.</p>
 <p>These images are known as "boxes" in Vagrant, and specifying the box to use for your Vagrant environment is always the first step after creating a new Vagrantfile.  Box files are generated through another Hashicorp tool called Packer, and boxes can be created for most HyperVisors.  As QMI is VirtualBox focussed that will be the focus of this article.</p>
 <h2 id="what-you-will-need">What you will need</h2>
-<p>What you will need</p>
 <ul>
 <li>The latest version of Packer </li>
 <li>A Windows Server 2016 ISO (This can be the evaluation edition),(The provided scripts are designed to work with Standard edition)</li>
@@ -524,6 +573,46 @@
 <td>root</td>
 <td>Win2k16.json</td>
 <td>Packer configuration file</td>
+</tr>
+</tbody>
+</table>
+<h2 id="packer-worklow">Packer Worklow</h2>
+<p><img alt="packer-workflow" src="../../img/packer-workflow.png" /></p>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Windows 2016 iso file is used by the win2k16.json (Packer template)</td>
+</tr>
+<tr>
+<td>2</td>
+<td>A standard Windows Autounattend.xml file is used to configure and install Windows 2016 Server</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Scripts are executed by Packer and referenced by the win2k16.json file to determine what is created with the machine image</td>
+</tr>
+<tr>
+<td>4</td>
+<td>The vagrant template specifies the default values to c reate as the output machine image (eg. Amount of RAM/Cores)</td>
+</tr>
+<tr>
+<td>5</td>
+<td>The above files are used by the Packer JSON file (win2k16.json) to create the machine image</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Hashicorp Packer does all the lifting and outputs a Vagrant box file</td>
+</tr>
+<tr>
+<td>7</td>
+<td>The output of packer is a Vagrant box (this will be added to Vagrant and be used as the base operating system)</td>
 </tr>
 </tbody>
 </table>
