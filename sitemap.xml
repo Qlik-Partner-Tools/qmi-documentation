@@ -47,6 +47,42 @@
      <changefreq>daily</changefreq>
     </url>
         
+    <url>
+     <loc>/scenarios/anatomy-of-a-scenario/</loc>
+     <lastmod>2018-02-06</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/scenarios/scenario-json/</loc>
+     <lastmod>2018-02-06</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/scenarios/vagrantfile/</loc>
+     <lastmod>2018-02-06</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/scenarios/readme-md/</loc>
+     <lastmod>2018-02-06</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/scenarios/scripts/</loc>
+     <lastmod>2018-02-06</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/scenarios/files/</loc>
+     <lastmod>2018-02-06</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
     
 
     

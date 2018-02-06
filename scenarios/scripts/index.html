@@ -36,7 +36,7 @@
     
     
       
-        <title>What is Packer - Qlik Machine Images</title>
+        <title>Provisioner Scripts - Qlik Machine Images</title>
       
     
     
@@ -69,7 +69,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
     <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
     
-      <a href="#introduction" tabindex="1" class="md-skip">
+      <a href="#scripts" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -95,7 +95,7 @@
                 Qlik Machine Images
               </span>
               <span class="md-header-nav__topic">
-                What is Packer
+                Provisioner Scripts
               </span>
             
           
@@ -188,12 +188,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
     
     <label class="md-nav__link" for="nav-3">
       Packer
@@ -209,6 +207,128 @@
           
           
 
+
+  <li class="md-nav__item">
+    <a href="../../packer/introduction/" title="What is Packer" class="md-nav__link">
+      What is Packer
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../packer/packer-repo/" title="Packer repository" class="md-nav__link">
+      Packer repository
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../packer/building-the-image/" title="Building the image" class="md-nav__link">
+      Building the image
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+    
+    <label class="md-nav__link" for="nav-4">
+      Scenarios
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Scenarios
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../introduction/" title="What are scenarios" class="md-nav__link">
+      What are scenarios
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../anatomy-of-a-scenario/" title="Anatomy of a scenario" class="md-nav__link">
+      Anatomy of a scenario
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../scenario-json/" title="Scenario.json" class="md-nav__link">
+      Scenario.json
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../vagrantfile/" title="Vagrantfile" class="md-nav__link">
+      Vagrantfile
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../readme-md/" title="Readme.md" class="md-nav__link">
+      Readme.md
+    </a>
+  </li>
+
+        
+          
+          
+          
+
   
 
 
@@ -216,38 +336,47 @@
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
     
-      
-    
     
       <label class="md-nav__link md-nav__link--active" for="toc">
-        What is Packer
+        Provisioner Scripts
       </label>
     
-    <a href="./" title="What is Packer" class="md-nav__link md-nav__link--active">
-      What is Packer
+    <a href="./" title="Provisioner Scripts" class="md-nav__link md-nav__link--active">
+      Provisioner Scripts
     </a>
     
       
 <nav class="md-nav md-nav--secondary">
   
   
-    
-  
   
     <label class="md-nav__title" for="toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#what-you-will-need" title="What you will need" class="md-nav__link">
-    What you will need
+  <a href="#scripts" title="Scripts" class="md-nav__link">
+    Scripts
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#note" title="Note:" class="md-nav__link">
+    Note:
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#qlik-base-os-repository" title="qlik-base-os repository" class="md-nav__link">
-    qlik-base-os repository
+        
+          <li class="md-nav__item">
+  <a href="#provisionerps1-script" title="Provisioner.ps1 script" class="md-nav__link">
+    Provisioner.ps1 script
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -266,127 +395,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../packer-repo/" title="Packer repository" class="md-nav__link">
-      Packer repository
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../building-the-image/" title="Building the image" class="md-nav__link">
-      Building the image
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
-    
-    <label class="md-nav__link" for="nav-4">
-      Scenarios
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-4">
-        Scenarios
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../scenarios/introduction/" title="What are scenarios" class="md-nav__link">
-      What are scenarios
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../scenarios/anatomy-of-a-scenario/" title="Anatomy of a scenario" class="md-nav__link">
-      Anatomy of a scenario
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../scenarios/scenario-json/" title="Scenario.json" class="md-nav__link">
-      Scenario.json
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../scenarios/vagrantfile/" title="Vagrantfile" class="md-nav__link">
-      Vagrantfile
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../scenarios/readme-md/" title="Readme.md" class="md-nav__link">
-      Readme.md
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../scenarios/scripts/" title="Provisioner Scripts" class="md-nav__link">
-      Provisioner Scripts
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../scenarios/files/" title="Files Folder" class="md-nav__link">
+    <a href="../files/" title="Files Folder" class="md-nav__link">
       Files Folder
     </a>
   </li>
@@ -447,23 +456,34 @@
 <nav class="md-nav md-nav--secondary">
   
   
-    
-  
   
     <label class="md-nav__title" for="toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#what-you-will-need" title="What you will need" class="md-nav__link">
-    What you will need
+  <a href="#scripts" title="Scripts" class="md-nav__link">
+    Scripts
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#note" title="Note:" class="md-nav__link">
+    Note:
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#qlik-base-os-repository" title="qlik-base-os repository" class="md-nav__link">
-    qlik-base-os repository
+        
+          <li class="md-nav__item">
+  <a href="#provisionerps1-script" title="Provisioner.ps1 script" class="md-nav__link">
+    Provisioner.ps1 script
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -482,63 +502,29 @@
               
                 
                 
-                <h1 id="introduction">Introduction</h1>
-<p>Packer is an open source tool for creating identical machine images for multiple platforms from a single source configuration. Packer is lightweight, runs on every major operating system, and is highly performant, creating machine images for multiple platforms in parallel. </p>
-<p>QMI uses Hashicorp Vagrant to use the machine image created by Packer.</p>
-<p>These images are known as "boxes" in Vagrant, and specifying the box to use for your Vagrant environment is always the first step after creating a new Vagrantfile.  Box files are generated through another Hashicorp tool called Packer, and boxes can be created for most HyperVisors.  As QMI is VirtualBox focussed that will be the focus of this article.</p>
-<h2 id="what-you-will-need">What you will need</h2>
-<p>What you will need</p>
-<ul>
-<li>The latest version of Packer </li>
-<li>A Windows Server 2016 ISO (This can be the evaluation edition),(The provided scripts are designed to work with Standard edition)</li>
-<li>A decent text editor</li>
-<li><a href="https://github.com/Qlik-Partner-Tools/qlik-base-os">Base Operating System</a> repository</li>
-<li>Some knowledge about Packer, JSON and PowerShell</li>
-<li>Time, building a box takes hours</li>
-</ul>
-<h2 id="qlik-base-os-repository">qlik-base-os repository</h2>
-<p>The qlik-base-os repository contains the files necessary to create a blank Microsoft Windows 2016 Standard Oracle VirtualBox virtual machine.  </p>
-<table>
-<thead>
-<tr>
-<th>Folder</th>
-<th>File</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>answer_files</td>
-<td>Autounattend.xml</td>
-<td>Windows unattended install template</td>
-</tr>
-<tr>
-<td>floppy</td>
-<td>NA</td>
-<td>Not currently used</td>
-</tr>
-<tr>
-<td>iso</td>
-<td>NA</td>
-<td>Place the Windows 2016 iso download here</td>
-</tr>
-<tr>
-<td>scripts</td>
-<td>All</td>
-<td>Scripts that are executed during the creation of the virtual machine image</td>
-</tr>
-<tr>
-<td>root</td>
-<td>vagrantfile-windows_2016.template</td>
-<td>Vagrant file used to create the Vagrant box file</td>
-</tr>
-<tr>
-<td>root</td>
-<td>Win2k16.json</td>
-<td>Packer configuration file</td>
-</tr>
-</tbody>
-</table>
+                  <h1>Provisioner Scripts</h1>
+                
+                <h2 id="scripts">Scripts</h2>
+<p>Provision scripts
+Most scenarios utilise shared scripts to reduce the amount of programming and maintenance.  Every script that supports use in multiple scenarios is stored in /shared-content/scripts/modules.
+As an example of this reuse the Provisioner.ps1 from the Qlik Sense - Single Node can be evaluated.  These scripts can be reused in any scenario.</p>
+<h3 id="note">Note:</h3>
+<p>The Shared-content folder is sourced from the <a href="https://github.com/Qlik-Partner-Tools/qlik-automation-core">qlik-automation-core</a> repository that was initialised during the configuration of the environment.</p>
+<h3 id="provisionerps1-script">Provisioner.ps1 script</h3>
+<pre><code>&amp; c:\shared-content\scripts\modules\q-user-setup.ps1
+
+&amp; c:\shared-content\scripts\modules\qs-getBinary.ps1
+
+&amp; c:\shared-content\scripts\modules\qs-initial-cfg.ps1
+
+&amp; c:\shared-content\scripts\modules\qs-install.ps1
+
+&amp; c:\shared-content\scripts\modules\qs-post-cfg.ps1
+
+&amp; c:\shared-content\scripts\modules\qs-update.ps1
+
+&amp; c:\shared-content\scripts\modules\q-provisioned.ps1
+</code></pre>
                 
                   
                 
@@ -557,7 +543,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../../getting-started/" title="Getting Started" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../readme-md/" title="Readme.md" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -566,19 +552,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Getting Started
+                Readme.md
               </span>
             </div>
           </a>
         
         
-          <a href="../packer-repo/" title="Packer repository" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../files/" title="Files Folder" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Packer repository
+                Files Folder
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

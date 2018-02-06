@@ -107,8 +107,98 @@
         }, 
         {
             "location": "/scenarios/introduction/", 
-            "text": "", 
+            "text": "Scenarios\n\n\nA scenario is a self contained machine image built for a purpose.  For example a Windows 2016 Server with Qlik Sense installed or a Windows 2016 Server with QlikView installed.\n\n\nThe following scenarios are provided through the repository \nqmi-scenarios\n\n\n\n\n\n\n\n\nScenario Name\n\n\nScenario Purpose\n\n\n\n\n\n\n\n\n\n\nqmi-qs-sn\n\n\nQlik Sense Single Node\n\n\n\n\n\n\nqmi-qv-ws\n\n\nQlikView Single Server with QlikView web server\n\n\n\n\n\n\nqmi-qs-aai\n\n\nQlik Sense with Advanced Analytics and R configured", 
             "title": "What are scenarios"
+        }, 
+        {
+            "location": "/scenarios/introduction/#scenarios", 
+            "text": "A scenario is a self contained machine image built for a purpose.  For example a Windows 2016 Server with Qlik Sense installed or a Windows 2016 Server with QlikView installed.  The following scenarios are provided through the repository  qmi-scenarios     Scenario Name  Scenario Purpose      qmi-qs-sn  Qlik Sense Single Node    qmi-qv-ws  QlikView Single Server with QlikView web server    qmi-qs-aai  Qlik Sense with Advanced Analytics and R configured", 
+            "title": "Scenarios"
+        }, 
+        {
+            "location": "/scenarios/anatomy-of-a-scenario/", 
+            "text": "What makes a scenario\n\n\nFolder Structure\n\n\nQMI has been built to a set of standards to enable fast and efficient usage and creation of scenarios.  A scenarios folder structure should follow this standard.\n\n\n\n\nScenario Folder Name\n\n\nThis is the parent folder containing the scenario content.\n\n\nScenario.json\n\n\nVagrantfile\n\n\nReadme.md\n\n\nScripts\n\n\nFiles Folder", 
+            "title": "Anatomy of a scenario"
+        }, 
+        {
+            "location": "/scenarios/anatomy-of-a-scenario/#what-makes-a-scenario", 
+            "text": "", 
+            "title": "What makes a scenario"
+        }, 
+        {
+            "location": "/scenarios/anatomy-of-a-scenario/#folder-structure", 
+            "text": "QMI has been built to a set of standards to enable fast and efficient usage and creation of scenarios.  A scenarios folder structure should follow this standard.", 
+            "title": "Folder Structure"
+        }, 
+        {
+            "location": "/scenarios/anatomy-of-a-scenario/#scenario-folder-name", 
+            "text": "This is the parent folder containing the scenario content.  Scenario.json  Vagrantfile  Readme.md  Scripts  Files Folder", 
+            "title": "Scenario Folder Name"
+        }, 
+        {
+            "location": "/scenarios/scenario-json/", 
+            "text": "scenario.json file\n\n\nThis file contains information on the scenario. And is used during the creation of the virtual machine.\n\n\n\n\nDescription of scenario.json fields\n\n\n\n\nname: The name of the scenario\n\n\ndescription: Text to describe what the scenario contains\n\n\ncategory: Category of scenario\n\n\nplugin-dependencies: Description of the Vagrant plug-ins that are required to run the scenario\n\n\nnotes: Any information you wish to advise the user on\n\n\nversion: Version of the scenario\n\n\nauthor: Name of the Author\n\n\nemail: Email address\n\n\ndisabled: Currently not used\n\n\nqlik-default-binary: The Qlik software to use by default\n\n\nresoures: URLS to present at the end of provisioning to enable users to connect\n\n\nconfig\n\n\nallowUpdates: Currently not used\n\n\nServers\n\n\nname: The name that will be the hostname of the server\n\n\nip: the IP address to assign the server\n\n\nbox: the name of the Vagrant box to use\n\n\nmemory: Amount of RAM to allocate\n\n\ncpus: The number of cores to allocate\n\n\nsense\n\n\ncentral: if the server is a central node\n\n\nproxy: Currently not used\n\n\npersistence: Shared or Sync", 
+            "title": "Scenario.json"
+        }, 
+        {
+            "location": "/scenarios/scenario-json/#scenariojson-file", 
+            "text": "This file contains information on the scenario. And is used during the creation of the virtual machine.", 
+            "title": "scenario.json file"
+        }, 
+        {
+            "location": "/scenarios/scenario-json/#description-of-scenariojson-fields", 
+            "text": "name: The name of the scenario  description: Text to describe what the scenario contains  category: Category of scenario  plugin-dependencies: Description of the Vagrant plug-ins that are required to run the scenario  notes: Any information you wish to advise the user on  version: Version of the scenario  author: Name of the Author  email: Email address  disabled: Currently not used  qlik-default-binary: The Qlik software to use by default  resoures: URLS to present at the end of provisioning to enable users to connect  config  allowUpdates: Currently not used  Servers  name: The name that will be the hostname of the server  ip: the IP address to assign the server  box: the name of the Vagrant box to use  memory: Amount of RAM to allocate  cpus: The number of cores to allocate  sense  central: if the server is a central node  proxy: Currently not used  persistence: Shared or Sync", 
+            "title": "Description of scenario.json fields"
+        }, 
+        {
+            "location": "/scenarios/vagrantfile/", 
+            "text": "Vagrantfile\n\n\nThis file is a simple set of instructions built in Ruby that tells QMI how and what to build. This file is used to create the scenario and configure the virtual machine.\n\n\n# -*- mode: ruby -*-\n# vi: set ft=ruby :\n\nVagrant.require_version \n= 1.6.2\n\n\n# Relative path where 'shared-content' can be found\nsharedContentRelativePath = '../shared-content'\n\nrequire 'json'\n# Module dependency for custom VM values setup\nrequire File.dirname(__FILE__) + '/' + sharedContentRelativePath + '/scripts/custom-setup.rb'\n\n# Load scenario data configuration file\nscenario = JSON.parse(File.read(File.join(File.dirname(__FILE__), 'scenario.json')))\n# Overwrite of VM values (cpus, memory) from custom values setup in QMI client\nvals = CustomSetup.getValues( scenario )[\nservers\n][0]\n\n\n# Vagrant intialization\nVagrant.configure(\n2\n) do |config|\n\n    config.vm.define vals[\nname\n]\n    config.vm.box = vals[\nbox\n]\n    config.vm.network \nprivate_network\n, ip: vals[\nip\n]\n    config.vm.hostname = vals[\nname\n]\n\n    config.vm.provider :virtualbox do |v, override|\n        v.name = vals[\nname\n]\n        v.linked_clone = true\n        # v.customize ['setextradata', :id, 'GUI/ScaleFactor', '1.25']\n        v.customize [\nmodifyvm\n, :id, \n--memory\n, vals[\nmemory\n]]\n        v.customize [\nmodifyvm\n, :id, \n--cpus\n, vals[\ncpus\n]]\n        v.customize [\nmodifyvm\n, :id, \n--vram\n, 64]\n        v.customize [\nmodifyvm\n, :id, \n--clipboard\n, \nbidirectional\n]\n\n    end\n\n    # Shared synced folders setup (Host \n-\n Guest)\n    config.vm.synced_folder \n./files\n, \nc:/installation/\n\n    config.vm.synced_folder sharedContentRelativePath, \nc:/shared-content/\n\n\n    # Provision scripts execution\n    config.vm.provision :shell, path: sharedContentRelativePath + \n/scripts/modules/q-bootstrap.ps1\n\n    config.vm.provision :shell, path: \n./scripts/provisioner.ps1\n\n\nend", 
+            "title": "Vagrantfile"
+        }, 
+        {
+            "location": "/scenarios/vagrantfile/#vagrantfile", 
+            "text": "This file is a simple set of instructions built in Ruby that tells QMI how and what to build. This file is used to create the scenario and configure the virtual machine.  # -*- mode: ruby -*-\n# vi: set ft=ruby :\n\nVagrant.require_version  = 1.6.2 \n\n# Relative path where 'shared-content' can be found\nsharedContentRelativePath = '../shared-content'\n\nrequire 'json'\n# Module dependency for custom VM values setup\nrequire File.dirname(__FILE__) + '/' + sharedContentRelativePath + '/scripts/custom-setup.rb'\n\n# Load scenario data configuration file\nscenario = JSON.parse(File.read(File.join(File.dirname(__FILE__), 'scenario.json')))\n# Overwrite of VM values (cpus, memory) from custom values setup in QMI client\nvals = CustomSetup.getValues( scenario )[ servers ][0]\n\n\n# Vagrant intialization\nVagrant.configure( 2 ) do |config|\n\n    config.vm.define vals[ name ]\n    config.vm.box = vals[ box ]\n    config.vm.network  private_network , ip: vals[ ip ]\n    config.vm.hostname = vals[ name ]\n\n    config.vm.provider :virtualbox do |v, override|\n        v.name = vals[ name ]\n        v.linked_clone = true\n        # v.customize ['setextradata', :id, 'GUI/ScaleFactor', '1.25']\n        v.customize [ modifyvm , :id,  --memory , vals[ memory ]]\n        v.customize [ modifyvm , :id,  --cpus , vals[ cpus ]]\n        v.customize [ modifyvm , :id,  --vram , 64]\n        v.customize [ modifyvm , :id,  --clipboard ,  bidirectional ]\n\n    end\n\n    # Shared synced folders setup (Host  -  Guest)\n    config.vm.synced_folder  ./files ,  c:/installation/ \n    config.vm.synced_folder sharedContentRelativePath,  c:/shared-content/ \n\n    # Provision scripts execution\n    config.vm.provision :shell, path: sharedContentRelativePath +  /scripts/modules/q-bootstrap.ps1 \n    config.vm.provision :shell, path:  ./scripts/provisioner.ps1 \n\nend", 
+            "title": "Vagrantfile"
+        }, 
+        {
+            "location": "/scenarios/readme-md/", 
+            "text": "README.md\n\n\nA markdown text file where you'll find detailed information about what's in this scenario, software installed, author's comments, etc.\n\n\n# Qlik Sense single node\n## Description\nQlik Sense single server\n\n| Servername        | Server IP         | Purpose | \n|-------------------|-------------------|---------|\n| qmi-qs-sn       | 192.168.56.6    | Qlik Sense |\n\n## URLs\n| Name | URL | Purpose\n|------|-----|---------\n|QMC|http://qmi-qs-sn/qmc | QMC\n|hub|http://qmi-qs-sn/hub | hub\n\n## Users\n| Name | Password |\n|------|-----|\n|.\\qlik| Qlik1234|\n\n## Purpose\nThis scenario is a basic installation of Qlik Sense.\n\n## What is installed\n### Software\n1. Qlik Sense Server\n\n### Support Information\n| Author | Version | Date Published |\n|--------|---------|----------------|\n|Clint Carr|1.0|8 Aug 2017|", 
+            "title": "Readme.md"
+        }, 
+        {
+            "location": "/scenarios/readme-md/#readmemd", 
+            "text": "A markdown text file where you'll find detailed information about what's in this scenario, software installed, author's comments, etc.  # Qlik Sense single node\n## Description\nQlik Sense single server\n\n| Servername        | Server IP         | Purpose | \n|-------------------|-------------------|---------|\n| qmi-qs-sn       | 192.168.56.6    | Qlik Sense |\n\n## URLs\n| Name | URL | Purpose\n|------|-----|---------\n|QMC|http://qmi-qs-sn/qmc | QMC\n|hub|http://qmi-qs-sn/hub | hub\n\n## Users\n| Name | Password |\n|------|-----|\n|.\\qlik| Qlik1234|\n\n## Purpose\nThis scenario is a basic installation of Qlik Sense.\n\n## What is installed\n### Software\n1. Qlik Sense Server\n\n### Support Information\n| Author | Version | Date Published |\n|--------|---------|----------------|\n|Clint Carr|1.0|8 Aug 2017|", 
+            "title": "README.md"
+        }, 
+        {
+            "location": "/scenarios/scripts/", 
+            "text": "Scripts\n\n\nProvision scripts\nMost scenarios utilise shared scripts to reduce the amount of programming and maintenance.  Every script that supports use in multiple scenarios is stored in /shared-content/scripts/modules.\nAs an example of this reuse the Provisioner.ps1 from the Qlik Sense - Single Node can be evaluated.  These scripts can be reused in any scenario.\n\n\nNote:\n\n\nThe Shared-content folder is sourced from the \nqlik-automation-core\n repository that was initialised during the configuration of the environment.\n\n\nProvisioner.ps1 script\n\n\n c:\\shared-content\\scripts\\modules\\q-user-setup.ps1\n\n\n c:\\shared-content\\scripts\\modules\\qs-getBinary.ps1\n\n\n c:\\shared-content\\scripts\\modules\\qs-initial-cfg.ps1\n\n\n c:\\shared-content\\scripts\\modules\\qs-install.ps1\n\n\n c:\\shared-content\\scripts\\modules\\qs-post-cfg.ps1\n\n\n c:\\shared-content\\scripts\\modules\\qs-update.ps1\n\n\n c:\\shared-content\\scripts\\modules\\q-provisioned.ps1", 
+            "title": "Provisioner Scripts"
+        }, 
+        {
+            "location": "/scenarios/scripts/#scripts", 
+            "text": "Provision scripts\nMost scenarios utilise shared scripts to reduce the amount of programming and maintenance.  Every script that supports use in multiple scenarios is stored in /shared-content/scripts/modules.\nAs an example of this reuse the Provisioner.ps1 from the Qlik Sense - Single Node can be evaluated.  These scripts can be reused in any scenario.", 
+            "title": "Scripts"
+        }, 
+        {
+            "location": "/scenarios/scripts/#note", 
+            "text": "The Shared-content folder is sourced from the  qlik-automation-core  repository that was initialised during the configuration of the environment.", 
+            "title": "Note:"
+        }, 
+        {
+            "location": "/scenarios/scripts/#provisionerps1-script", 
+            "text": "c:\\shared-content\\scripts\\modules\\q-user-setup.ps1  c:\\shared-content\\scripts\\modules\\qs-getBinary.ps1  c:\\shared-content\\scripts\\modules\\qs-initial-cfg.ps1  c:\\shared-content\\scripts\\modules\\qs-install.ps1  c:\\shared-content\\scripts\\modules\\qs-post-cfg.ps1  c:\\shared-content\\scripts\\modules\\qs-update.ps1  c:\\shared-content\\scripts\\modules\\q-provisioned.ps1", 
+            "title": "Provisioner.ps1 script"
+        }, 
+        {
+            "location": "/scenarios/files/", 
+            "text": "Files Folder\n\n\nThe files folder should contain any files that you want to provision with the scenario.\nFor example the qmi-qs-sn (Qlik Machine Image \u2013 Qlik Sense \u2013 Single Node) scenario contains the following.\n\n\nThis folder will be shared with the guest virtual machine and can provide the provisioning scripts with content.\n\n\n\n\n\n\n\n\nName\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\napps\n\n\nAny applications stored in this folder, or folders within this folder will be imported into Qlik Sense and published to the folder name.\n\n\n\n\n\n\nextensions\n\n\nAny extensions stored in this folder will be imported into Qlik Sense.\n\n\n\n\n\n\nqs-cfg.json\n\n\nThis file contains configuration information used in the provisioning of Qlik Sense.\n\n\n\n\n\n\nsp_config.xml\n\n\nThis XML file is used by the Qlik Sense installer to configure Shared Persistence.", 
+            "title": "Files Folder"
+        }, 
+        {
+            "location": "/scenarios/files/#files-folder", 
+            "text": "The files folder should contain any files that you want to provision with the scenario.\nFor example the qmi-qs-sn (Qlik Machine Image \u2013 Qlik Sense \u2013 Single Node) scenario contains the following.  This folder will be shared with the guest virtual machine and can provide the provisioning scripts with content.     Name  Description      apps  Any applications stored in this folder, or folders within this folder will be imported into Qlik Sense and published to the folder name.    extensions  Any extensions stored in this folder will be imported into Qlik Sense.    qs-cfg.json  This file contains configuration information used in the provisioning of Qlik Sense.    sp_config.xml  This XML file is used by the Qlik Sense installer to configure Shared Persistence.", 
+            "title": "Files Folder"
         }, 
         {
             "location": "/vagrant/introduction/", 
