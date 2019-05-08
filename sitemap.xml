@@ -1,112 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-    
     <url>
-     <loc>/</loc>
-     <lastmod>2018-02-06</lastmod>
+     <loc>None</loc>
+     <lastmod>2019-05-08</lastmod>
      <changefreq>daily</changefreq>
     </url>
-    
-
-    
     <url>
-     <loc>/getting-started/</loc>
-     <lastmod>2018-02-06</lastmod>
+     <loc>None</loc>
+     <lastmod>2019-05-08</lastmod>
      <changefreq>daily</changefreq>
     </url>
-    
-
-    
-        
     <url>
-     <loc>/packer/introduction/</loc>
-     <lastmod>2018-02-06</lastmod>
+     <loc>None</loc>
+     <lastmod>2019-05-08</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>/packer/building-the-image/</loc>
-     <lastmod>2018-02-06</lastmod>
+     <loc>None</loc>
+     <lastmod>2019-05-08</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
-    
-
-    
-        
     <url>
-     <loc>/scenarios/introduction/</loc>
-     <lastmod>2018-02-06</lastmod>
+     <loc>None</loc>
+     <lastmod>2019-05-08</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>/scenarios/anatomy-of-a-scenario/</loc>
-     <lastmod>2018-02-06</lastmod>
+     <loc>None</loc>
+     <lastmod>2019-05-08</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>/scenarios/scenario-json/</loc>
-     <lastmod>2018-02-06</lastmod>
+     <loc>None</loc>
+     <lastmod>2019-05-08</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>/scenarios/vagrantfile/</loc>
-     <lastmod>2018-02-06</lastmod>
+     <loc>None</loc>
+     <lastmod>2019-05-08</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>/scenarios/readme-md/</loc>
-     <lastmod>2018-02-06</lastmod>
+     <loc>None</loc>
+     <lastmod>2019-05-08</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>/scenarios/scripts/</loc>
-     <lastmod>2018-02-06</lastmod>
+     <loc>None</loc>
+     <lastmod>2019-05-08</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>/scenarios/files/</loc>
-     <lastmod>2018-02-06</lastmod>
+     <loc>None</loc>
+     <lastmod>2019-05-08</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
-    
-
-    
-        
     <url>
-     <loc>/vagrant/introduction/</loc>
-     <lastmod>2018-02-06</lastmod>
+     <loc>None</loc>
+     <lastmod>2019-05-08</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>/vagrant/getting-started/</loc>
-     <lastmod>2018-02-06</lastmod>
+     <loc>None</loc>
+     <lastmod>2019-05-08</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>/vagrant/launch-scenario/</loc>
-     <lastmod>2018-02-06</lastmod>
+     <loc>None</loc>
+     <lastmod>2019-05-08</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
-    
-
-    
     <url>
-     <loc>/faq/</loc>
-     <lastmod>2018-02-06</lastmod>
+     <loc>None</loc>
+     <lastmod>2019-05-08</lastmod>
      <changefreq>daily</changefreq>
     </url>
-    
-
 </urlset>
