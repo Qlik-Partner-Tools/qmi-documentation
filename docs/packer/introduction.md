@@ -11,7 +11,7 @@ These images are known as "boxes" in Vagrant, and specifying the box to use for 
 * The latest version of Packer 
 * A Windows Server 2016 ISO (This can be the evaluation edition),(The provided scripts are designed to work with Standard edition)
 * A decent text editor
-* [Base Operating System](https://github.com/Qlik-Partner-Tools/qlik-base-os) repository
+* <a href="https://github.com/Qlik-Partner-Tools/qlik-base-os" target="_blank">Base Operating System</a> repository
 * Some knowledge about Packer, JSON and PowerShell
 * Time, building a box takes hours
 

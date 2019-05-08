@@ -11,7 +11,7 @@
 * Save the file
 
 ## Get the MD5 checksum value from the Windows 2016 ISO file
-You will need to download a tool for this, use something like MD5SUM or if using Windows the [MD5 Checksum Tool](https://www.microsoft.com/en-au/download/details.aspx?id=11533)
+You will need to download a tool for this, use something like MD5SUM or if using Windows the <a href="https://www.microsoft.com/en-au/download/details.aspx?id=11533" target="_blank">MD5 Checksum Tool</a>  
 
 1. Launch your terminal
 * Use whatever MD5 checksum tool you have chosen to get the checksum
