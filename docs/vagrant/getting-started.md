@@ -17,9 +17,18 @@
 ![vagrant-license-folder](../img/vagrant-license-folder.png)
 4. Add the Qlik Licenses (at this stage only sense and qlikview are functional)
 
+   *NB:  sensepa (i.e. Professional/Analyzer)  is the default license type for Qlik Sense. To use token base the scenario must  have `"license": "token"` set in the "sense" section of the scenario.json file.*
+
 ```
 {
   "sense": {
+    "name": "ENTER_NAME_HERE",
+    "control": "ENTER_CONTROL_CODE_HERE",
+    "serial": "ENTER_SERIAL_CODE_HERE",
+    "organization": "ENTER_YOUR_ORG_NAME_HERE",
+    "lef": "QLIKSENSE_LEF_STRING_GOES_HERE"
+  },
+  "sensepa": {
     "name": "ENTER_NAME_HERE",
     "control": "ENTER_CONTROL_CODE_HERE",
     "serial": "ENTER_SERIAL_CODE_HERE",
@@ -48,6 +57,25 @@
   }
 }
 ```
+
+Here is an example of the sense (token) and sensepa (professional/Analyzer) licenses populated:
+```
+"sense": {
+    "name": "Qlik token",
+    "control": "12345",
+    "serial": "9999000000001299",
+    "organization": "Qlik",
+    "lef": "9999000000001292\nPURPOSE;2001 Sense Token Key;;\nPRODUCTLEVEL;50;;2020-01-31\nTOKENS;100;;\nOVERAGE;NO;;\nTIMELIMIT;;;2020-01-31\nZ8D9-SZYD-J5RR-D86G-ABCD"
+  },
+  "sensepa": {
+    "name": "Qlik  Professional Analyser",
+    "control": "12345",
+    "serial": "9999000000001200",
+    "organization": "Qlik",
+    "lef": "9999000000001277\nPURPOSE;2001 Sense P/A Key;;\nPRODUCTLEVEL;50;;2020-01-31\nTIMELIMIT;;;2020-01-31\nOVERAGE;NO;;\nPROFESSIONAL;100;;\nANALYZER;100;;\nGEOANALYTICS;YES;;\nGEOPLUS;YES;;\nGEOCODING;1000000;2018-12-31;2020-01-31\nWEBCONNECTORS;YES;;\nQDM_ESSENTIALS;YES;;\nIGNORE_TOKENS;YES;;\nTOKENS;200;;\nELASTIC;NO;;\nCLOUD_SERVICE;NO;;\nKZW3-CQ8K-9E5U-L894-WXYZ"
+  },
+  ```
+
 ## Qlik Version
 The version of Qlik that is installed with the scenario is determined by the default-qlik-binary field in __scenario.json__.  This value updates the /shared-content/binaries/qver.json file.
 
